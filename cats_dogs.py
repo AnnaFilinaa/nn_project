@@ -52,12 +52,14 @@ def preprocess_image(image):
 
 if __name__ == "__main__":
     # Load the pre-trained model
-    PATH = '/resnet50_dogs_cats.pth'
+    
+    model_url = 'https://github.com/your_username/your_repository/raw/main/resnet50_dogs_cats.pth'
+    model_path = 'resnet50_dogs_cats.pth'
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
     model = resnet50()
     model.fc = nn.Linear(2048, 1)
-    model.load_state_dict(torch.load(PATH, map_location=device))
+    model.load_state_dict(torch.load(model_path, map_location=device))
     model.eval()
 
     main()
