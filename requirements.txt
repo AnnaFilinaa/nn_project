@@ -88,9 +88,6 @@ sympy==1.12
 tenacity==8.2.2
 tensorboard==2.13.0
 tensorboard-data-server==0.7.0
-tensorflow==2.13.0rc0
-tensorflow-estimator==2.13.0rc0
-tensorflow-macos==2.13.0rc0
 termcolor==2.3.0
 toml==0.10.2
 toolz==0.12.0
