@@ -1010,9 +1010,9 @@ labels = {0: 'tench, Tinca tinca',
 
 def classify_random_image(image):
     transform = transforms.Compose([
-        transforms.Resize((299, 299)),  
-        transforms.ToTensor(),  
-        transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])  
+        transforms.Resize((299, 299)),
+        transforms.ToTensor(),
+        transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
     ])
     image = transform(image).unsqueeze(0)
 
@@ -1035,47 +1035,27 @@ def random_image_classification():
         max_size = (500, 500)
         image.thumbnail(max_size)
         st.image(image, caption='Uploaded Image', use_column_width=True)
-            
+
         if st.button("Classify"):
             prediction = classify_random_image(image)
             display_result(prediction)
 
 
-def cat_or_dog_image_classification():
-    st.subheader("Cat or Dog Image Classification")
-    uploaded_image = st.file_uploader("Upload an image of a cat or a dog:")
-    if uploaded_image is not None:
-        image = Image.open(uploaded_image)
-        st.image(image, caption='Uploaded Image', use_column_width=True) 
-        if st.button("Classify"):
-            pass
-
-def skin_lesion_classification():
-    st.subheader("Skin Lesion Image Classification")
-    uploaded_image = st.file_uploader("Upload an image of a skin lesion:")
-    if uploaded_image is not None:
-        image = Image.open(uploaded_image)
-        st.image(image, caption='Uploaded Image', use_column_width=True) 
-        if st.button("Classify"):
-            
-            pass
-
-
 def main():
     st.title("Image Classification App")
 
-    
     pages = {
         "Random Image Classification": random_image_classification,
-        "Cat or Dog Image Classification": cat_or_dog_image_classification,
-        "Skin Lesion Image Classification": skin_lesion_classification
     }
 
-  
     page = st.sidebar.radio("Choose a classification type:", tuple(pages.keys()))
 
-   
     pages[page]()
+
 
 if __name__ == '__main__':
     main()
+
+
+
+
