@@ -7,12 +7,10 @@ import streamlit as st
 from PIL import Image
 import requests
 from io import BytesIO
-import tensorflow as tf
 import torch
-import torchutils as tu
 from torchvision.models import resnet50
 import torch.nn as nn
-from torchvision import transforms as T
+from torchvision import transforms
 
 def main():
     st.title("Cat vs. Dog Classifier")
