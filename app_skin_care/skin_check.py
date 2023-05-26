@@ -10,7 +10,7 @@ def get_prediction(image):
     model = resnet50(pretrained=False)
     model.fc = nn.Linear(in_features=2048, out_features=1)
                        
-    model.load_state_dict(torch.load('nn_project/app_skin_care/resnet50bin2.pth', map_location=device))
+    model.load_state_dict(torch.load('app_skin_care/skin_check.py', map_location=device))
     model = model.to(device)
     model.eval()
 
