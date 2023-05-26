@@ -52,7 +52,7 @@ def preprocess_image(image):
 
 if __name__ == "__main__":
     # Load the pre-trained model
-    PATH = '/Users/vasevooo/projects/nn_project/resnet50_dogs_cats.pth'
+    PATH = '/resnet50_dogs_cats.pth'
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
     model = resnet50()
